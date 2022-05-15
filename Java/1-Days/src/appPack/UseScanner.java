@@ -21,9 +21,9 @@ public class UseScanner {
         String name = readSt.nextLine();
 
         // Sn. Erkan Toplam Sonucunuz: 790
-        String line = "Sn. " + name + " Toplam Sonucunuz: " + sum;
-        System.out.println( line );
-        //System.out.printf("Sn. {0} Toplam Sonucunuz: {1}", name, sum);
+        //String line = "Sn. " + name + " Toplam Sonucunuz: " + sum;
+        //System.out.println( line );
+        System.out.printf("Sn. %s Toplam Sonucunuz: %s", name, sum);
 
 
     }
