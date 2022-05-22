@@ -19,6 +19,11 @@ public class Action {
         System.out.println("Action Call " + name);
     }
 
+    // this -> kullanıldığı methodun sınıfını işaret eder.
+    public Action(String name) {
+        this.name = name;
+    }
+
     // noParams noReturn
     public void noParams() {
         System.out.println("noReturn call");
@@ -64,6 +69,16 @@ public class Action {
         return address;
     }
 
+
+    // sınırsız data alımı
+    // spaceParams("Fenerbahçe", "Galatasaray", "Beşiktaş")
+    public String spaceParams( String... items ) {
+        String st = "";
+        for ( String item : items ) {
+            st += item + " ";
+        }
+        return st;
+    }
 
 
 }

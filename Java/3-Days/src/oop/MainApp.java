@@ -70,6 +70,13 @@ public class MainApp {
         // açıklama satırı
         ac.minus(50,40);
 
+        // kurucu method - parametre
+        Action ac3 = new Action("Mehmet");
+        System.out.println( ac3.name );
+
+        String line = ac3.spaceParams("Fenerbahçe", "Galatasaray", "Beşiktaş", "Bursa Spor");
+        System.out.println( line );
+
     }
 
     private static double alanHesapla() {
