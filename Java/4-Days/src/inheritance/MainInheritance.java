@@ -15,7 +15,15 @@ public class MainInheritance {
     }
 
     public static void call( Base base ) {
+        if ( base instanceof A ){
+            A castA = (A) base;
+            castA.aCall();
+        }
+        if ( base instanceof B ) {
+
+        }
         base.read();
     }
+
 
 }
