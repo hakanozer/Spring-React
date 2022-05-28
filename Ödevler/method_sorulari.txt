@@ -1,0 +1,59 @@
+METHOD SORULARI :
+
+1 - Parametre olarak aldığı sayıyı
+asal mı diye kontrol edip,
+sayı asal ise true, değilse false döndüren
+isPrime methodunu yazın
+
+public static boolean isPrime(int n)
+
+
+2 - Parametre olarak 2 int sayı alan,
+bu sayilarin (ilki hariç, 2.si dahil olmak
+üzere) toplamlarını döndüren bir method
+yazın
+
+3 - Parametre olarak 2 int sayi alan (a,b),
+ilk sayi tek ise a/b'yi,
+ilk sayi çift ise a%b'yi double olarak
+döndüren bir method yazın
+
+4 - parametre olarak verilen long sayisinin
+rakamlarinin toplamını döndüren methodu
+yazin
+
+5 - parametre olarak verilen kg ve boy (double)
+değerlerinden BMI'yi hesaplayip double
+olarak döndüren methodu yazın
+
+6 - parametre olarak verilen int sayinin
+tersten yazilmiş halini int olarak döndüren
+bir method yazin
+
+7 - parametre olarak verilen int sayinin
+palindrome olup olmadığını test eden
+sonucu boolean olarak döndüren  bir method
+yazın
+
+palindrome : düz ve ters yazılışı aynı
+olan şeyler örn : 
+1441 <--> 1441
+ata <--> ata
+1223221 <--> 1223221
+
+8 - parametre olarak verilen int[] deki 
+en büyük ve en küçük sayının toplamını
+int olarak döndüren method yazın
+
+9 - parametre olarak bir int[]ve bir sayi
+alan, eğer array sayiyi içeriyorsa true,
+içermiyorsa false döndüren bir method yazin
+
+
+10 - kullanıcıdan 4 tane int değer alan,
+ve en büyük olan değeri geri döndüren bir
+method yazın
+
+11 - kullanıcıdan iki int[] değer alan
+bu arraylerdeki ortak elemanların
+sayısını döndüren bir method yazın
