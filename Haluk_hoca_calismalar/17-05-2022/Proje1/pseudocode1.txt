@@ -1,0 +1,20 @@
+Step1: print "Birinci sayıyı(int) giriniz:"
+Step2: scan sayi1
+Step3: print "ikinci sayıyı(int) giriniz:"
+Step4: scan sayi2
+Step5: call topla(sayi1, sayi2) and assign it to toplam
+Step6: print toplam
+Step7: call cikar(sayi1, sayi2)
+Step8: call carp(sayi1, sayi2)
+Step9: call bol(sayi1, sayi2) and assign it to bolum
+Step10: print bolum
+
+
+toplam: int
+bolum: double
+
+topla(int, int): int
+cikar(int, int): void -> print result
+carp(int, int): void -> print result
+bol(int, int): double
+
