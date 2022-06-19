@@ -6,15 +6,16 @@ import org.springframework.http.HttpStatus;
 import org.springframework.http.ResponseEntity;
 import org.springframework.stereotype.Service;
 
-import java.util.ArrayList;
-import java.util.LinkedHashMap;
-import java.util.List;
-import java.util.Map;
+import java.util.*;
 
 @Service
 public class ProductService {
 
     public List<Product> ls = new ArrayList<>();
+    final Random rnd;
+    public ProductService(Random randomBeanName) {
+        this.rnd = randomBeanName;
+    }
 
     public ResponseEntity save(Product product) {
         Map<ERest, Object> hm = new LinkedHashMap<>();
@@ -32,6 +33,7 @@ public class ProductService {
     }
 
     public ResponseEntity single( int id ) {
+        System.out.println( rnd.nextInt(100) );
         Map<ERest, Object> hm = new LinkedHashMap<>();
         hm.put(ERest.status, false);
         hm.put(ERest.result, id);
