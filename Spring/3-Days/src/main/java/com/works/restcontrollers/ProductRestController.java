@@ -3,12 +3,15 @@ package com.works.restcontrollers;
 import com.works.entities.Product;
 import com.works.services.ProductService;
 import org.springframework.http.ResponseEntity;
-import org.springframework.web.bind.annotation.GetMapping;
-import org.springframework.web.bind.annotation.PostMapping;
-import org.springframework.web.bind.annotation.RequestBody;
-import org.springframework.web.bind.annotation.RestController;
+import org.springframework.validation.annotation.Validated;
+import org.springframework.web.bind.annotation.*;
+
+import javax.validation.Valid;
+import javax.validation.constraints.Min;
 
 @RestController
+@RequestMapping("/product")
+@Validated
 public class ProductRestController {
 
     final ProductService pService;
@@ -17,7 +20,7 @@ public class ProductRestController {
     }
 
     @PostMapping("/save")
-    public ResponseEntity save(@RequestBody Product product) {
+    public ResponseEntity save(@Valid @RequestBody Product product) {
         return pService.save(product);
     }
 
@@ -26,6 +29,10 @@ public class ProductRestController {
         return pService.list();
     }
 
+    @GetMapping("/single/{id}")
+    public ResponseEntity single(  @PathVariable @Min(value = 1, message = "id en az 1 olmalıdır.") int id ) {
+        return pService.single(id);
+    }
 
 
 }

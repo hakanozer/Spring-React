@@ -31,4 +31,18 @@ public class ProductService {
         return new ResponseEntity( hm, HttpStatus.OK );
     }
 
+    public ResponseEntity single( int id ) {
+        Map<ERest, Object> hm = new LinkedHashMap<>();
+        hm.put(ERest.status, false);
+        hm.put(ERest.result, id);
+        for ( Product item : ls ) {
+            if ( item.getId() == id ) {
+                hm.put(ERest.status, true);
+                hm.put(ERest.result, item);
+                break;
+            }
+        }
+        return new ResponseEntity( hm, HttpStatus.OK );
+    }
+
 }
