@@ -25,7 +25,7 @@ public class UserRestController {
 
     @GetMapping("/list")
     public ResponseEntity list() {
-        return list();
+        return uService.list();
     }
 
 
@@ -38,6 +38,11 @@ public class UserRestController {
     @GetMapping("/single")
     public ResponseEntity single( @RequestParam String id ) {
         return uService.single(id);
+    }
+
+    @PutMapping("/update")
+    public ResponseEntity update( @RequestBody User user ) {
+        return uService.update(user);
     }
 
 

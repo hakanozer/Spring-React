@@ -18,6 +18,7 @@ public class UserService {
         this.uRepo = uRepo;
     }
 
+
     public ResponseEntity save( User user) {
         Map<String, Object> hm = new HashMap<>();
         User u = uRepo.save(user);
@@ -26,6 +27,7 @@ public class UserService {
         hm.put("user", user);
         return new ResponseEntity(hm, HttpStatus.OK);
     }
+
 
     public ResponseEntity list() {
         Map<String, Object> hm = new HashMap<>();
@@ -66,6 +68,21 @@ public class UserService {
             hm.put("message", "id request : " + sid);
             hm.put("status", false);
             return new ResponseEntity(hm, HttpStatus.BAD_REQUEST);
+        }
+        return new ResponseEntity(hm, HttpStatus.OK);
+    }
+
+
+    public ResponseEntity update( User user ) {
+        Map<String, Object> hm = new HashMap<>();
+        Optional<User> oUser = uRepo.findById(user.getUid());
+        if ( oUser.isPresent() ) {
+            uRepo.saveAndFlush(user);
+            hm.put("message", user);
+            hm.put("status", true);
+        }else {
+            hm.put("message", "Fail uid");
+            hm.put("status", false);
         }
         return new ResponseEntity(hm, HttpStatus.OK);
     }
