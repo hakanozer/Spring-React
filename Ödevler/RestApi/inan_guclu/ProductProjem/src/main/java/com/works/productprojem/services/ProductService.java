@@ -77,7 +77,6 @@ public class ProductService {
 
     }
 
-    // bu bir acıklama satırıdır
 
     public ResponseEntity update(Product product){
         Map<String,Object> hm =new LinkedHashMap<>();
