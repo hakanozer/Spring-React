@@ -94,7 +94,6 @@ public class ProductService {
         hm.put(status, false);
         hm.put(result, "A value greater than the entered value was not found.");
         for (Product item : ls){
-            //p ile item' ın yerleri değiştirince şart doğru çalışmıyor
             if (p <= item.getPrice()){
                 hm.put(status, true);
                 hm.put(result, ls);

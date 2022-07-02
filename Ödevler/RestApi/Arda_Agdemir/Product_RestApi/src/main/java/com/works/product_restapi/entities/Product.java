@@ -26,7 +26,6 @@ public class Product {
 
     //@NotBlank(message = " ") --> 500 = Internal Server
     //defaultMessage = boş değer olamaz olarak dönüyor
-    //Çoklu silme yapılabilir mi?
     @NotNull(message = "Price is not null")
     @Min(value=10, message = "The price cannot be less than 10.")
     private Integer price;
