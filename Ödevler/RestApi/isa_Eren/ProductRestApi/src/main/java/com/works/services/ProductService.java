@@ -66,7 +66,7 @@ public class ProductService {
         hm.put(ERest.RESULT, ls);
         return new ResponseEntity(hm, HttpStatus.OK);
     }
-
+//Bu bir açıklama satırıdır.
 
     public ResponseEntity pricesearch(double q) {
         //fiyatı eşit yada büyük olanlar getir
