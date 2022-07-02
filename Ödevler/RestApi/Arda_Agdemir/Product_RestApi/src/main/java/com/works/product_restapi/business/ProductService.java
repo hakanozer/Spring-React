@@ -17,7 +17,7 @@ import static com.works.product_restapi.utilities.ERest.*;
 @Service
 public class ProductService {
 
-    ProductRepository productRepository;
+    final ProductRepository productRepository;
 
     public ProductService(ProductRepository productRepository) {
         this.productRepository = productRepository;

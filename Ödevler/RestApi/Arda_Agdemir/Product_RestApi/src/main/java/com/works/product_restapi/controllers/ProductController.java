@@ -14,7 +14,7 @@ import javax.validation.Valid;
 @RequestMapping("/product")
 public class ProductController {
 
-    ProductService productService;
+    final ProductService productService;
 
     public ProductController(ProductService productService) {
         this.productService = productService;
@@ -24,7 +24,6 @@ public class ProductController {
     public ResponseEntity save(@Valid @RequestBody Product product){
         return productService.save(product);
     }
-
     @DeleteMapping("/delete")
     public ResponseEntity delete(@RequestParam String id){
         return productService.delete(id);
