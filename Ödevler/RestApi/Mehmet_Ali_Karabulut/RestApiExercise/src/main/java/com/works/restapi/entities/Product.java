@@ -1,3 +1,4 @@
+package com.works.restapi.entities;
 import lombok.Data;
 import org.hibernate.validator.constraints.Length;
 import javax.persistence.*;
@@ -12,7 +13,7 @@ public class Product {
     @GeneratedValue(strategy = GenerationType.IDENTITY)
     private int pid;
 
-    @Length(min = 3,max = 40,message = "En az 3 en fazla 40 karekter yazılmalıdır!")
+    @Length(min = 3,max = 40,message = "En az 3 en fazla 40 karakter girilmelidir.")
     private String title;
 
     private String detail;
