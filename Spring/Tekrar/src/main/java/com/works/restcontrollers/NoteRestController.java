@@ -3,10 +3,7 @@ package com.works.restcontrollers;
 import com.works.entities.Note;
 import com.works.services.NoteService;
 import org.springframework.http.ResponseEntity;
-import org.springframework.web.bind.annotation.PostMapping;
-import org.springframework.web.bind.annotation.RequestBody;
-import org.springframework.web.bind.annotation.RequestMapping;
-import org.springframework.web.bind.annotation.RestController;
+import org.springframework.web.bind.annotation.*;
 
 @RestController
 @RequestMapping("/note")
@@ -25,7 +22,7 @@ public class NoteRestController {
         return nService.save( note );
     }
 
-    @PostMapping("/list")
+    @GetMapping("/list")
     public ResponseEntity list() {
         return nService.list();
     }
