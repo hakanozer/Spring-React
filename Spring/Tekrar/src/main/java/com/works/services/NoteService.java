@@ -33,4 +33,21 @@ public class NoteService {
         return new ResponseEntity(hm, HttpStatus.OK);
     }
 
+
+    public ResponseEntity search( String q ) {
+        Map<ERest, Object> hm = new LinkedHashMap<>();
+        hm.put(ERest.result, noteRepository.findByTitleContainsOrDetailContainsAllIgnoreCase(q,q));
+        return new ResponseEntity(hm, HttpStatus.OK);
+    }
+
+    // User
+    // register
+    // uid, name, surname, email, password
+    // kurallar
+    // name -> min 3, max 13
+    // surname ->  min 3, max 13
+    // email -> format control
+        // daha önceden kullanımda olan bir mail olduğunda kayıt olmayacak ve bu mail daha kullanımda hatası.
+    // password -> md5
+
 }
