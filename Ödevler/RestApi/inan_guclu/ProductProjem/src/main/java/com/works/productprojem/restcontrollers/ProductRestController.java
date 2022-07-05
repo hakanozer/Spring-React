@@ -47,4 +47,11 @@ public class ProductRestController {
         return  productService.update(product);
     }
 
+
+    @GetMapping("/search")
+    public ResponseEntity search(@RequestParam String q){ return  productService.search(q);}
+
+
+    @GetMapping("/pricesearch")
+    public ResponseEntity pricesearch(@RequestParam Integer p){return productService.pricesearch(p);}
 }
