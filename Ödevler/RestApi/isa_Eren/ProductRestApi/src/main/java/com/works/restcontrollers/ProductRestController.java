@@ -2,7 +2,6 @@ package com.works.restcontrollers;
 
 import com.works.entities.Product;
 import com.works.services.ProductService;
-import org.hibernate.validator.constraints.Length;
 import org.springframework.http.ResponseEntity;
 import org.springframework.web.bind.annotation.*;
 
@@ -42,7 +41,7 @@ public class ProductRestController {
     }
 
     @GetMapping("/pricesearch")
-    public ResponseEntity pricesearch(@Length  @RequestParam Double q) {
+    public ResponseEntity pricesearch(@RequestParam Double q) {
         return productService.pricesearch(q);
     }
 

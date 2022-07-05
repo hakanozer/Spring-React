@@ -58,7 +58,7 @@ public class ProductService {
         hm.put(ERest.RESULT, productRepository.findAll());
         return new ResponseEntity(hm, HttpStatus.OK);
     }
-//isa Eren
+
     public ResponseEntity search(String q) {
         Map<ERest, Object> hm = new LinkedHashMap<>();
         List<Product> ls = productRepository.findByTitleContainsIgnoreCaseOrDetailContainsIgnoreCase(q, q);
@@ -75,12 +75,4 @@ public class ProductService {
         hm.put(ERest.RESULT, ls);
         return new ResponseEntity(hm, HttpStatus.OK);
     }
-    public ResponseEntity pricesearch(double q) {
-        Map<ERest, Object> hm = new LinkedHashMap<>();
-        List<Product> ls = productRepository.findByPriceGreaterThanEqual(q);
-        hm.put(ERest.STATUS, true);
-        hm.put(ERest.RESULT, ls);
-        return new ResponseEntity(hm, HttpStatus.OK);
-    }
-
 }
