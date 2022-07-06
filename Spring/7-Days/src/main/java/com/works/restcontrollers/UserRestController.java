@@ -1,6 +1,7 @@
 package com.works.restcontrollers;
 
 import com.works.entities.User;
+import com.works.entities.UserPassword;
 import com.works.services.UserService;
 import org.springframework.http.ResponseEntity;
 import org.springframework.web.bind.annotation.PostMapping;
@@ -21,6 +22,12 @@ public class UserRestController {
     @PostMapping("/profileUpdate")
     public ResponseEntity profileUpdate(@RequestBody User user) {
         return uService.profileUpdate(user);
+    }
+
+
+    @PostMapping("/passwordChange")
+    public ResponseEntity passwordChange(@RequestBody UserPassword userPassword) {
+        return uService.passwordChange(userPassword);
     }
 
 

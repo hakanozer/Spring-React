@@ -1,6 +1,7 @@
 package com.works.services;
 
 import com.works.entities.User;
+import com.works.entities.UserPassword;
 import com.works.repositories.UserRepository;
 import com.works.utils.Util;
 import org.springframework.http.HttpStatus;
@@ -79,5 +80,30 @@ public class UserService {
         return new ResponseEntity(hm, HttpStatus.OK);
     }
 
+
+    public ResponseEntity passwordChange(UserPassword userPassword) {
+        Map<String, Object> hm = new LinkedHashMap<>();
+        Optional<User> oUser = uRepo.findById( userPassword.getUid() );
+        if ( oUser.isPresent() ) {
+            User dbUser = oUser.get();
+            String dbOldPassword = dbUser.getPassword();
+            String jsonOldPassword = Util.md5( userPassword.getOldPassword() );
+            if ( dbOldPassword.equals( jsonOldPassword ) ) {
+                String jsonNewPassword = Util.md5( userPassword.getNewPassword() );
+                dbUser.setPassword( jsonNewPassword );
+                uRepo.saveAndFlush( dbUser );
+                hm.put("status", true);
+                dbUser.setPassword("secur");
+                hm.put("result", dbUser);
+            }else {
+                hm.put("status", false);
+                hm.put("result", userPassword);
+            }
+        }else {
+            hm.put("status", false);
+            hm.put("result", userPassword);
+        }
+        return new ResponseEntity(hm, HttpStatus.OK);
+    }
 
 }
