@@ -2,13 +2,13 @@ package com.works.productprojem.services;
 
 import com.works.productprojem.entities.Product;
 import com.works.productprojem.repositories.ProductRepository;
+import com.works.productprojem.utils.ERest;
 import org.springframework.http.HttpStatus;
 import org.springframework.http.ResponseEntity;
 import org.springframework.stereotype.Service;
-import org.springframework.web.bind.annotation.*;
 
-import java.util.HashMap;
 import java.util.LinkedHashMap;
+import java.util.List;
 import java.util.Map;
 import java.util.Optional;
 
@@ -38,14 +38,14 @@ public class ProductService {
 
 
     public ResponseEntity delete(String id) {
-        Map<String, Object> hm = new LinkedHashMap<>();
+        Map<ERest, Object> hm = new LinkedHashMap<>();
         try {
             int iid = Integer.parseInt(id);
             productRepository.deleteById(iid);
-            hm.put("success", true);
+            hm.put(ERest.status, true);
         } catch (Exception ex) {
-            hm.put("message", "id request : " + id);
-            hm.put("success", false);
+            hm.put(ERest.message, "id request : " + id);
+            hm.put(ERest.status, false);
             return new ResponseEntity<>(hm, HttpStatus.BAD_REQUEST);
         }
 
@@ -55,21 +55,21 @@ public class ProductService {
 
     public ResponseEntity single(String sid) {
 
-        Map<String, Object> hm = new LinkedHashMap<>();
+        Map<ERest, Object> hm = new LinkedHashMap<>();
         try {
             int id = Integer.parseInt(sid);
             Optional<Product> oProduct = productRepository.findById(id);
             if (oProduct.isPresent()) {
-                hm.put("status", true);
-                hm.put("result", oProduct.get());
+                hm.put(ERest.status, true);
+                hm.put(ERest.result, oProduct.get());
             } else {
-                hm.put("status", false);
-                hm.put("result", "empty!!");
+                hm.put(ERest.status, false);
+                hm.put(ERest.message, "empty!!");
             }
 
         } catch (Exception ex) {
-            hm.put("message", "id request : " + sid);
-            hm.put("success", false);
+            hm.put(ERest.message, "id request : " + sid);
+            hm.put(ERest.status, false);
             return new ResponseEntity<>(hm, HttpStatus.BAD_REQUEST);
         }
 
@@ -77,25 +77,39 @@ public class ProductService {
 
     }
 
-//cvcvv
-
-
-    public ResponseEntity update(Product product){
-        Map<String,Object> hm =new LinkedHashMap<>();
-        Optional<Product> oProduct=productRepository.findById(product.getProductID());
-        if (oProduct.isPresent()){
+    public ResponseEntity update(Product product) {
+        Map<ERest, Object> hm = new LinkedHashMap<>();
+        Optional<Product> oProduct = productRepository.findById(product.getProductID());
+        if (oProduct.isPresent()) {
             productRepository.saveAndFlush(product);
-            hm.put("message", product);
-            hm.put("status", true);
-        }else {
-            hm.put("message","fail uid");
-            hm.put("status", false);
+            hm.put(ERest.message, product);
+            hm.put(ERest.status, true);
+        } else {
+            hm.put(ERest.message, "fail uid");
+            hm.put(ERest.status, false);
         }
 
 
+        return new ResponseEntity(hm, HttpStatus.OK);
+    }
 
-
+    public ResponseEntity search(String q){
+        Map<ERest,Object>hm=new LinkedHashMap<>();
+        List<Product> ls= productRepository.findByTitleContainsIgnoreCaseOrDetailContainsIgnoreCase(q,q);
+        hm.put(ERest.result,ls);
         return new ResponseEntity(hm,HttpStatus.OK);
     }
+
+    public ResponseEntity pricesearch(Integer q){
+        Map<ERest,Object>hm=new LinkedHashMap<>();
+        List<Product> ls= productRepository.findByPriceGreaterThanEqual(q);
+
+        hm.put(ERest.status,true);
+        hm.put(ERest.result,ls);
+        return new ResponseEntity<>(hm,HttpStatus.OK);
+
+    }
+
+
 
 }
