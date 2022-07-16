@@ -1,7 +1,7 @@
 package com.works.services;
 
-import com.works.entities.Category;
 import com.works.entities.Product;
+import com.works.repositories.JoinProCatRepository;
 import com.works.repositories.ProductRepository;
 import org.springframework.http.HttpStatus;
 import org.springframework.http.ResponseEntity;
@@ -14,8 +14,10 @@ import java.util.Map;
 public class ProductService {
 
     final ProductRepository pRepo;
-    public ProductService(ProductRepository pRepo) {
+    final JoinProCatRepository jRepo;
+    public ProductService(ProductRepository pRepo, JoinProCatRepository jRepo) {
         this.pRepo = pRepo;
+        this.jRepo = jRepo;
     }
 
     public ResponseEntity save(Product product) {
@@ -29,7 +31,7 @@ public class ProductService {
     public ResponseEntity list() {
         Map<String, Object> hm = new LinkedHashMap<>();
         hm.put("status", true);
-        hm.put("result", pRepo.findAll() );
+        hm.put("result", jRepo.allProduct() );
         return new ResponseEntity(hm, HttpStatus.OK);
     }
 
