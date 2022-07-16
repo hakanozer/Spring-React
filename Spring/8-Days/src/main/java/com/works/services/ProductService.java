@@ -71,5 +71,11 @@ public class ProductService {
         return new ResponseEntity(hm, HttpStatus.OK);
     }
 
+    public ResponseEntity allProCatID( int cid ) {
+        Map<String, Object> hm = new LinkedHashMap<>();
+        hm.put("status", true);
+        hm.put("result", pRepo.allProCatID( cid ) );
+        return new ResponseEntity(hm, HttpStatus.OK);
+    }
 
 }

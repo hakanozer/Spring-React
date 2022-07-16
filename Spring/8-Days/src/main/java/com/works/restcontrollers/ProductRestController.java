@@ -41,4 +41,10 @@ public class ProductRestController {
         return pService.searchPage(q,page,size);
     }
 
+
+    @GetMapping("/allProCatID")
+    public ResponseEntity allProCatID(@RequestParam(defaultValue = "") int cid ) {
+        return pService.allProCatID(cid);
+    }
+
 }
