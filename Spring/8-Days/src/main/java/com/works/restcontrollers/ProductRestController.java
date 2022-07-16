@@ -26,4 +26,9 @@ public class ProductRestController {
         return pService.list();
     }
 
+    @GetMapping("/search")
+    public ResponseEntity search( @RequestParam(defaultValue = "") String q ) {
+        return pService.search( q );
+    }
+
 }

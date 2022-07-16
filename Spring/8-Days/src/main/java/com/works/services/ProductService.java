@@ -36,6 +36,14 @@ public class ProductService {
     }
 
 
+    public ResponseEntity search( String q ) {
+        Map<String, Object> hm = new LinkedHashMap<>();
+        hm.put("status", true);
+        hm.put("result", jRepo.searchProduct( "%" + q + "%" ));
+        return new ResponseEntity(hm, HttpStatus.OK);
+    }
+
+
 
 
 }
