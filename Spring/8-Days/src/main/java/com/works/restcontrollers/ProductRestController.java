@@ -31,4 +31,14 @@ public class ProductRestController {
         return pService.search( q );
     }
 
+    @GetMapping("/page")
+    public ResponseEntity search( @RequestParam(defaultValue = "0") int start, @RequestParam(defaultValue = "5") int count ) {
+        return pService.pageProduct(start, count);
+    }
+
+    @GetMapping("/searchpage")
+    public ResponseEntity searchpage(@RequestParam(defaultValue = "") String q, @RequestParam(defaultValue = "0") int page, @RequestParam(defaultValue = "5") int size ) {
+        return pService.searchPage(q,page,size);
+    }
+
 }
