@@ -16,7 +16,7 @@ public class NewsService {
         newsData.getArticles().forEach( item -> {
             System.out.println( item.getTitle() );
         } );
-        return new ResponseEntity(stData, HttpStatus.OK);
+        return new ResponseEntity(newsData, HttpStatus.OK);
     }
 
 }
