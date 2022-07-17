@@ -1,9 +1,9 @@
 package com.works.restcontrollers;
 
-import com.works.entities.Category;
 import com.works.entities.Product;
-import com.works.services.CategoryService;
 import com.works.services.ProductService;
+import org.springframework.cache.CacheManager;
+import org.springframework.cache.annotation.Cacheable;
 import org.springframework.http.ResponseEntity;
 import org.springframework.web.bind.annotation.*;
 
@@ -12,16 +12,20 @@ import org.springframework.web.bind.annotation.*;
 public class ProductRestController {
 
     final ProductService pService;
-    public ProductRestController(ProductService pService) {
+    final CacheManager cacheManager;
+    public ProductRestController(ProductService pService, CacheManager cacheManager) {
         this.pService = pService;
+        this.cacheManager = cacheManager;
     }
 
     @PostMapping("/save")
     public ResponseEntity save(@RequestBody Product product) {
+        cacheManager.getCache("productList").clear();
         return pService.save( product );
     }
 
     @GetMapping("/list")
+    @Cacheable("productList")
     public ResponseEntity list() {
         return pService.list();
     }
