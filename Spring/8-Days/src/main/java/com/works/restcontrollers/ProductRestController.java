@@ -5,6 +5,7 @@ import com.works.services.ProductService;
 import org.springframework.cache.CacheManager;
 import org.springframework.cache.annotation.Cacheable;
 import org.springframework.http.ResponseEntity;
+import org.springframework.scheduling.annotation.Scheduled;
 import org.springframework.web.bind.annotation.*;
 
 @RestController
@@ -49,6 +50,13 @@ public class ProductRestController {
     @GetMapping("/allProCatID")
     public ResponseEntity allProCatID(@RequestParam(defaultValue = "") int cid ) {
         return pService.allProCatID(cid);
+    }
+
+
+    @Scheduled(fixedDelay = 5000)
+    public void resetCache() {
+        cacheManager.getCache("productList").clear();
+        System.out.println("ResetCache Call");
     }
 
 }
