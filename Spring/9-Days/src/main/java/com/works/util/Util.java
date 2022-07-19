@@ -10,6 +10,11 @@ public class Util {
         map.forEach( (key, val) -> {
             baseUrl += key + "=" + val + "&";
         });
+
+        char endChar = baseUrl.charAt(baseUrl.length() - 1);
+        if ( endChar == '&' ) {
+            baseUrl = baseUrl.substring(0, baseUrl.length() -1);
+        }
         return baseUrl;
     }
 

@@ -2,8 +2,7 @@ package com.works.restcontrollers;
 
 import com.works.services.NewsService;
 import org.springframework.http.ResponseEntity;
-import org.springframework.web.bind.annotation.GetMapping;
-import org.springframework.web.bind.annotation.RestController;
+import org.springframework.web.bind.annotation.*;
 
 @RestController
 public class NewsRestController {
@@ -16,6 +15,11 @@ public class NewsRestController {
     @GetMapping("/news")
     public ResponseEntity news() {
         return nService.news();
+    }
+
+    @PostMapping("/userLogin")
+    public ResponseEntity userLogin(@RequestParam String email, @RequestParam String password) {
+        return nService.userLogin(email, password);
     }
 
 
