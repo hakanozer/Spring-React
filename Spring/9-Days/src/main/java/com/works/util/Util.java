@@ -11,8 +11,7 @@ public class Util {
             baseUrl += key + "=" + val + "&";
         });
 
-        char endChar = baseUrl.charAt(baseUrl.length() - 1);
-        if ( endChar == '&' ) {
+        if ( baseUrl.endsWith("&") ) {
             baseUrl = baseUrl.substring(0, baseUrl.length() -1);
         }
         return baseUrl;
