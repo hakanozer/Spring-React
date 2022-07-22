@@ -12,7 +12,6 @@ import java.util.Map;
 
 @Service
 public class ProductService {
-
     final ProductRepository pRepo;
     final JoinProCatRepository jRepo;
     public ProductService(ProductRepository pRepo, JoinProCatRepository jRepo) {
