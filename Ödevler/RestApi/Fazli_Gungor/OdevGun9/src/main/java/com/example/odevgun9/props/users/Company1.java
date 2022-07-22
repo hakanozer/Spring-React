@@ -1,12 +1,10 @@
 
-package com.example.odevgun9.props;
+package com.example.odevgun9.props.users;
 
-import java.util.HashMap;
-import java.util.Map;
 import javax.annotation.Generated;
 
 @Generated("jsonschema2pojo")
-public class Company {
+public class Company1 {
 
     private String name;
     private String catchPhrase;
@@ -45,7 +43,6 @@ public class Company {
     public void setAdditionalProperty(String name, Object value) {
         this.additionalProperties.put(name, value);
     }
-
      */
 
 }

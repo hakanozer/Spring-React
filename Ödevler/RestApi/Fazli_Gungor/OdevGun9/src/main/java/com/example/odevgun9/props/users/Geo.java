@@ -1,5 +1,5 @@
 
-package com.example.odevgun9.props;
+package com.example.odevgun9.props.users;
 
 import java.util.HashMap;
 import java.util.Map;

@@ -19,7 +19,10 @@ public class CompanyService {
     }
 
     public ResponseEntity singleCompany(){
-        Map hm = new LinkedHashMap();
+        Map<String, Object> hm = new LinkedHashMap();
+
+        String url = "";
+
 
         return new ResponseEntity(hm, HttpStatus.OK);
     }

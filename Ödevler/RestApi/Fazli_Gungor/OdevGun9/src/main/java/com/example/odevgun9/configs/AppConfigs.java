@@ -15,6 +15,9 @@ public class AppConfigs {
 
     //Bir class'ın Bean olabılmesı için(Injection yapabılmek ıcın) class'ın parametre almaması gerekır.!!
 
+    //Java dış dunyaya acıldıgında try-catch ıster. RestTemplate'de ıstemedı cunku kendı ıcerısınde
+    //denenetımlerını yapar.
+
     @Bean
     public RestTemplate restTemplate(){
         return new RestTemplate();

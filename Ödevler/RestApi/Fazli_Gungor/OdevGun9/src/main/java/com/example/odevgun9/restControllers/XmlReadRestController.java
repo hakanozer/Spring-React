@@ -1,11 +1,10 @@
-package com.works.restcontrollers;
+package com.example.odevgun9.restControllers;
 
-import com.works.services.XmlReadService;
+import com.example.odevgun9.services.XmlReadService;
 import org.springframework.http.HttpStatus;
 import org.springframework.http.ResponseEntity;
 import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.PathVariable;
-import org.springframework.web.bind.annotation.RequestParam;
 import org.springframework.web.bind.annotation.RestController;
 
 import java.util.LinkedHashMap;
@@ -27,9 +26,7 @@ public class XmlReadRestController {
     }
     @GetMapping("/currency/{money}")
     public ResponseEntity money(@PathVariable String money) {
-        Map<String, Object> hm = new LinkedHashMap<>();
-        hm.put("result", xmlService.usdCurrency(money));
-        return new ResponseEntity( hm, HttpStatus.OK );
+        return xmlService.singleCurrency(money);
     }
 
 }
