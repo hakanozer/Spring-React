@@ -15,7 +15,8 @@ public class JsonUser {
     private Address address;
     private String phone;
     private String website;
-    private Company company;
+
+   // private Company company;
     private Map<String, Object> additionalProperties = new HashMap<String, Object>();
 
     public Integer getId() {
@@ -74,13 +75,13 @@ public class JsonUser {
         this.website = website;
     }
 
-    public Company getCompany() {
-        return company;
-    }
+  // public Company getCompany() {
+  //     return company;
+  // }
 
-    public void setCompany(Company company) {
-        this.company = company;
-    }
+  // public void setCompany(Company company) {
+  //     this.company = company;
+  // }
 
     public Map<String, Object> getAdditionalProperties() {
         return this.additionalProperties;
