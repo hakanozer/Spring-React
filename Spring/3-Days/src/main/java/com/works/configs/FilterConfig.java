@@ -26,8 +26,8 @@ public class FilterConfig implements Filter {
             ip = req.getRemoteAddr();
         }
         // User-Agent
-        //String userAgent = req.getHeader("User-Agent");
-        //String url = req.getRequestURI();
+        // String userAgent = req.getHeader("User-Agent");
+        // String url = req.getRequestURI();
 
         final String referer = getReferer(req);
         final String fullURL = getFullURL(req);
