@@ -20,4 +20,8 @@ public interface JoinTeamToFootballer extends JpaRepository<JoinTeamtoFootballer
     List<JoinTeamtoFootballer> allFootballerWithTeamB();
     @Query(value = "SELECT f.fid, f.tid, f.name, f.lastname,f.age,f.email, t.team_name FROM footballer as f INNER JOIN team as t ON f.tid = t.tid WHERE f.tid=1", nativeQuery = true)
     List<JoinTeamtoFootballer> allFootballerWithTeamA();
+    @Query(value = "SELECT f.fid, f.tid, f.name, f.lastname,f.age,f.email, t.team_name FROM footballer as f INNER JOIN team as t ON f.tid = t.tid WHERE f.tid=3", nativeQuery = true)
+    List<JoinTeamtoFootballer> allReserveeFootballerWithTeamA();
+    @Query(value = "SELECT f.fid, f.tid, f.name, f.lastname,f.age,f.email, t.team_name FROM footballer as f INNER JOIN team as t ON f.tid = t.tid WHERE f.tid=4", nativeQuery = true)
+    List<JoinTeamtoFootballer> allReserveeFootballerWithTeamB();
 }

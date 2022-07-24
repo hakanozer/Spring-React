@@ -88,6 +88,29 @@ public class FootballerServices {
         return new ResponseEntity(hm, HttpStatus.OK);
     }
 
+    public ResponseEntity backUpCreate() {
+        Map<ERest, Object> hm = new LinkedHashMap<>();
+        List<Footballer> footballerList = footballerRepository.findByOrderByAgeAsc();
+        try {
+            for (int i = 0; i < 2; i++) {//Yedek oyucu seçimi-Takımlar kaç kişi olacağının seçimi testi kolay olsun diye sayı düşük tutulmuştus
+                Footballer footballer = footballerList.get(i);
+                footballer.setTid(3);
+                footballerRepository.save(footballer);
+            }
+            List<Footballer> footballerList2 = footballerRepository.findByOrderByAgeAsc();
+            for (int i = 0; i < 2; i++) {//Takımlar kaç kişi olacağının seçimi testi kolay olsun diye sayı düşük tutulmuştus
+                Footballer footballer = footballerList2.get(i);
+                footballer.setTid(4);
+                footballerRepository.save(footballer);
+            }
+            hm.put(ERest.backupteamA, joinTeamToFootballer.allReserveeFootballerWithTeamA());
+            hm.put(ERest.backupteamB, joinTeamToFootballer.allReserveeFootballerWithTeamB());
+        } catch (Exception e) {
+            hm.put(ERest.status, false);
+            hm.put(ERest.message, "Yeterli sayıya ulaşılamadığı için  takım yedekleri oluşturulamadı oluşturulamadı");
+        }
+        return new ResponseEntity(hm, HttpStatus.OK);
+    }
     void teamIdSetNull() {
         List<Footballer> footballerList = footballerRepository.findAll();
         for (Footballer footballer : footballerList) {

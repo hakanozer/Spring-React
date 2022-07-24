@@ -1,5 +1,5 @@
 package com.example.futbolmuskabakasi.Utils;
 
 public enum ERest {
-    status, message, result, teamA, teamB
+    status, message, result, teamA, teamB,backupteamA,backupteamB
 }
