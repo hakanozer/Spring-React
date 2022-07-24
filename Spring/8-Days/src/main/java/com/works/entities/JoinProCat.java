@@ -16,5 +16,4 @@ public class JoinProCat {
     private String ptitle;
     private String title;
 
-
 }
