@@ -63,19 +63,18 @@ public class FootballerServices {
         return new ResponseEntity(hm, HttpStatus.OK);
     }
 
-
     public ResponseEntity teamCreate() {
         Map<ERest, Object> hm = new LinkedHashMap<>();
         teamIdSetNull();
         List<Footballer> footballerList = footballerRepository.findByOrderByAgeAsc();
         try {
-            for (int i = 0; i < 5; i++) {//Takımlar kaç kişi olacağının seçimi
+            for (int i = 0; i < 5; i++) {//Takımlar kaç kişi olacağının seçimi testi kolay olsun diye sayı düşük tutulmuştus
                 Footballer footballer = footballerList.get(i);
                 footballer.setTid(1);
                 footballerRepository.save(footballer);
             }
             List<Footballer> footballerList2 = footballerRepository.findByOrderByAgeAsc();
-            for (int i = 0; i < 5; i++) {
+            for (int i = 0; i < 5; i++) {//Takımlar kaç kişi olacağının seçimi testi kolay olsun diye sayı düşük tutulmuştus
                 Footballer footballer = footballerList2.get(i);
                 footballer.setTid(2);
                 footballerRepository.save(footballer);

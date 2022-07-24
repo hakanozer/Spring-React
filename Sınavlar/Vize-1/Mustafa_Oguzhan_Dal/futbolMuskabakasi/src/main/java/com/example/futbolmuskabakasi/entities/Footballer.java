@@ -2,11 +2,10 @@ package com.example.futbolmuskabakasi.entities;
 
 import lombok.Data;
 
-import javax.persistence.Entity;
-import javax.persistence.GeneratedValue;
-import javax.persistence.GenerationType;
-import javax.persistence.Id;
+import javax.persistence.*;
 import javax.validation.constraints.Email;
+import javax.validation.constraints.Min;
+import javax.validation.constraints.NotNull;
 
 @Entity
 @Data
@@ -14,13 +13,15 @@ public class Footballer {
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
     private Integer fid;
-
     private Integer tid;
 
     private String name;
     private String lastname;
     private String email;
-    private int age;
+    @NotNull
+    @Min(message = "18 Yaşından küçükler kayıt olamaz", value = 18)
+    @Column(nullable = false)
+    private Integer age;
     private String password;
 
 }
