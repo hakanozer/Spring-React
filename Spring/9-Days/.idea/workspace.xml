@@ -1,0 +1,119 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project version="4">
+  <component name="AutoImportSettings">
+    <option name="autoReloadType" value="SELECTIVE" />
+  </component>
+  <component name="ChangeListManager">
+    <list default="true" id="57b44d64-1b54-48f4-8484-ede77d2a532f" name="Changes" comment="">
+      <change afterPath="$PROJECT_DIR$/../../Ödevler/RestApi/Fazli_Gungor/FutbolMusabakasiRestApi/src/main/java/com/works/Util/Util.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../../Ödevler/RestApi/Fazli_Gungor/FutbolMusabakasiRestApi/src/main/java/com/works/controllers/FutbolcuRestController.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../../Ödevler/RestApi/Fazli_Gungor/FutbolMusabakasiRestApi/src/main/java/com/works/controllers/TeamsRestController.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../../Ödevler/RestApi/Fazli_Gungor/FutbolMusabakasiRestApi/src/main/java/com/works/entities/Futbolcu.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../../Ödevler/RestApi/Fazli_Gungor/FutbolMusabakasiRestApi/src/main/java/com/works/entities/JoinFutbolcuToTakim.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../../Ödevler/RestApi/Fazli_Gungor/FutbolMusabakasiRestApi/src/main/java/com/works/entities/Teams.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../../Ödevler/RestApi/Fazli_Gungor/FutbolMusabakasiRestApi/src/main/java/com/works/repositories/FutbolcuRepository.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../../Ödevler/RestApi/Fazli_Gungor/FutbolMusabakasiRestApi/src/main/java/com/works/repositories/JoinFutbolcuToTakimRepository.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../../Ödevler/RestApi/Fazli_Gungor/FutbolMusabakasiRestApi/src/main/java/com/works/repositories/TeamsRepository.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../../Ödevler/RestApi/Fazli_Gungor/FutbolMusabakasiRestApi/src/main/java/com/works/services/FutbolcuServices.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../../Ödevler/RestApi/Fazli_Gungor/FutbolMusabakasiRestApi/src/main/java/com/works/services/TeamsService.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../8-Days/src/main/java/com/works/entities/JoinProCat.java" beforeDir="false" afterPath="$PROJECT_DIR$/../8-Days/src/main/java/com/works/entities/JoinProCat.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../8-Days/src/main/java/com/works/repositories/JoinProCatRepository.java" beforeDir="false" afterPath="$PROJECT_DIR$/../8-Days/src/main/java/com/works/repositories/JoinProCatRepository.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../Ödevler/RestApi/Fazli_Gungor/FutbolMusabakasiRestApi/pom.xml" beforeDir="false" afterPath="$PROJECT_DIR$/../../Ödevler/RestApi/Fazli_Gungor/FutbolMusabakasiRestApi/pom.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../Ödevler/RestApi/Fazli_Gungor/FutbolMusabakasiRestApi/src/main/java/com/works/futbolmusabakasirestapi/FutbolMusabakasiRestApiApplication.java" beforeDir="false" afterPath="$PROJECT_DIR$/../../Ödevler/RestApi/Fazli_Gungor/FutbolMusabakasiRestApi/src/main/java/com/works/FutbolMusabakasiRestApiApplication.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../Ödevler/RestApi/Fazli_Gungor/FutbolMusabakasiRestApi/src/main/resources/application.properties" beforeDir="false" afterPath="$PROJECT_DIR$/../../Ödevler/RestApi/Fazli_Gungor/FutbolMusabakasiRestApi/src/main/resources/application.properties" afterDir="false" />
+    </list>
+    <option name="SHOW_DIALOG" value="false" />
+    <option name="HIGHLIGHT_CONFLICTS" value="true" />
+    <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />
+    <option name="LAST_RESOLUTION" value="IGNORE" />
+  </component>
+  <component name="FileTemplateManagerImpl">
+    <option name="RECENT_TEMPLATES">
+      <list>
+        <option value="Class" />
+      </list>
+    </option>
+  </component>
+  <component name="Git.Settings">
+    <option name="RECENT_GIT_ROOT_PATH" value="$PROJECT_DIR$/../.." />
+  </component>
+  <component name="KotlinMultiplatform">
+    <allAvailableExecutables />
+  </component>
+  <component name="MarkdownSettingsMigration">
+    <option name="stateVersion" value="1" />
+  </component>
+  <component name="ProjectId" id="2C4FvkjFoj7p2HAL8BvdIlAtYAx" />
+  <component name="ProjectLevelVcsManager" settingsEditedManually="true">
+    <ConfirmationsSetting value="2" id="Add" />
+  </component>
+  <component name="ProjectViewState">
+    <option name="hideEmptyMiddlePackages" value="true" />
+    <option name="showLibraryContents" value="true" />
+  </component>
+  <component name="PropertiesComponent"><![CDATA[{
+  "keyToString": {
+    "RunOnceActivity.OpenProjectViewOnStart": "true",
+    "RunOnceActivity.ShowReadmeOnStart": "true",
+    "WebServerToolWindowFactoryState": "false",
+    "last_opened_file_path": "C:/Users/fazli.gungor/OneDrive - ECOZUM BILGI TEKNOLOJILERI A.S/Documents/GitHub/Spring-React/Spring/9-Days",
+    "node.js.detected.package.eslint": "true",
+    "node.js.detected.package.tslint": "true",
+    "node.js.selected.package.eslint": "(autodetect)",
+    "node.js.selected.package.tslint": "(autodetect)",
+    "spring.configuration.checksum": "033a24335edae88b3160b95f84a03849"
+  }
+}]]></component>
+  <component name="RecentsManager">
+    <key name="CopyFile.RECENT_KEYS">
+      <recent name="$PROJECT_DIR$/src/main/java/com/works/props/users" />
+      <recent name="$PROJECT_DIR$/src/main/java/com/works/props" />
+    </key>
+  </component>
+  <component name="RunManager">
+    <configuration name="Days9Application" type="SpringBootApplicationConfigurationType" factoryName="Spring Boot">
+      <option name="FRAME_DEACTIVATION_UPDATE_POLICY" value="UpdateClassesAndResources" />
+      <module name="Days9" />
+      <option name="SHORTEN_COMMAND_LINE" value="NONE" />
+      <option name="SPRING_BOOT_MAIN_CLASS" value="com.works.Days9Application" />
+      <option name="UPDATE_ACTION_UPDATE_POLICY" value="UpdateClassesAndResources" />
+      <method v="2">
+        <option name="Make" enabled="true" />
+      </method>
+    </configuration>
+  </component>
+  <component name="SpellCheckerSettings" RuntimeDictionaries="0" Folders="0" CustomDictionaries="0" DefaultDictionary="application-level" UseSingleDictionary="true" transferred="true" />
+  <component name="TaskManager">
+    <task active="true" id="Default" summary="Default task">
+      <changelist id="57b44d64-1b54-48f4-8484-ede77d2a532f" name="Changes" comment="" />
+      <created>1658054183552</created>
+      <option name="number" value="Default" />
+      <option name="presentableId" value="Default" />
+      <updated>1658054183552</updated>
+      <workItem from="1658054186222" duration="2015000" />
+      <workItem from="1658056712974" duration="588000" />
+      <workItem from="1658058735945" duration="16000" />
+      <workItem from="1658250251019" duration="6789000" />
+      <workItem from="1658296409437" duration="12000" />
+      <workItem from="1658337299459" duration="6230000" />
+      <workItem from="1658420903040" duration="5065000" />
+      <workItem from="1658561352657" duration="1469000" />
+    </task>
+    <servers />
+  </component>
+  <component name="TypeScriptGeneratedFilesManager">
+    <option name="version" value="3" />
+  </component>
+  <component name="Vcs.Log.Tabs.Properties">
+    <option name="TAB_STATES">
+      <map>
+        <entry key="MAIN">
+          <value>
+            <State />
+          </value>
+        </entry>
+      </map>
+    </option>
+  </component>
+</project>
