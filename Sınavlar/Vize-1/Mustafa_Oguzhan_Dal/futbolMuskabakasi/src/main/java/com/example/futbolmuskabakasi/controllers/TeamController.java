@@ -3,7 +3,6 @@ package com.example.futbolmuskabakasi.controllers;
 import com.example.futbolmuskabakasi.services.TeamServices;
 import org.springframework.http.ResponseEntity;
 import org.springframework.web.bind.annotation.GetMapping;
-import org.springframework.web.bind.annotation.PostMapping;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RestController;
 
@@ -16,5 +15,8 @@ public class TeamController {
         this.teamServices = teamServices;
     }
 
-
+    @GetMapping
+    public ResponseEntity createTeam() {
+        return teamServices.createTeam();
+    }
 }
